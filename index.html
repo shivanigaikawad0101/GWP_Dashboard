@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="nav-wrapper">
+      <h1 id="nav-logo">GWP Dashboard</h1>
+      <nav id="nav">
+        <a href="#top-brokers" class="nav-link active" id="top-brokers"
+          ><span class="nav-link-span"
+            ><span class="u-nav">Brokers</span></span
+          ></a
+        >
+        <a
+          href="#graphical-representations"
+          class="nav-link"
+          id="#graphical-representations"
+          ><span class="nav-link-span"
+            ><span class="u-nav">Graph</span></span
+          ></a
+        >
+        <a
+          href="#business-class-analysis"
+          class="nav-link"
+          id="#business-class-analysis"
+          ><span class="nav-link-span"
+            ><span class="u-nav">Analysis</span></span
+          ></a
+        >
+      </nav>
+    </div>
+    <main>
+      <!-- Top 10 Brokers Section -->
+      <section id="top-brokers">
+        <div class="top-brokers-layout">
+          <h2>Top 10 Brokers</h2>
+          <div>
+            <div class="select-label">Market type</div>
+          <select id="top-brokers-select" name="form_select">
+            <option value="all" selected>All</option>
+            <option value="open-market-div">Open Market</option>
+            <option value="facilities-div">Facilities</option>
+            <option value="open-market-and-facilities-div">Combined</option>
+          </select>
+        </div>
+        </div>
+        <div id="top-brokers-table">
+          <div id="open-market-div" style="display: block">
+          <h3>Open Market</h3>
+          <table id="open-market-table">
+            <!-- Broker data will be populated here -->
+          </table>
+        </div>
+        <div id="facilities-div" style="display: block">
+          <h3>Facilities</h3>
+          <table id="facilities-table">
+            <!-- Broker data will be populated here -->
+          </table>
+        </div>
+        <div id="open-market-and-facilities-div" style="display: block">
+          <h3>Open Market & Facilities</h3>
+          <table id="combined-table">
+            <!-- Broker data will be populated here -->
+          </table>
+        </div>
+        </div>
+      </section>
+
+      <!-- Graphical Representations Section -->
+      <section id="graphical-representations">
+        <div class="top-brokers-layout">
+        <h2>Graphical Representations</h2>
+        <div class="flex-box">
+          <div class="legend">
+            <div class="square" id="square"></div>
+            <div class="lagend-text">GWP</div>
+          </div>
+          <div class="legend">
+            <div class="square" id="planned-square"></div>
+            <div class="lagend-text">Planned GWP</div>
+          </div>
+          <div>
+            <div class="select-label">Market type</div>
+              <select id="market-type" name="form_select">
+                <option value="All" selected>All</option>
+                <option value="Open Market">Open Market</option>
+                <option value="Facilities">Facilities</option>
+              </select>
+            </div>
+        <div>
+          <div class="select-label">Year</div>
+          <select id="year-wise" name="form_select">
+            <option value="All" selected>All</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+          </select>
+        </div>
+        <div>
+          <div class="select-label">Count</div>
+          <select id="data-index-wise" name="form_select">
+          </select>
+        </div>
+        </div>
+      </div>
+        
+        <div id="chart-container">
+           <svg height="700" class="my_bar" id="my_bar"></svg>
+        </div>
+      </section>
+
+      <!-- Business Class Analysis Section -->
+      <section id="business-class-analysis">
+        <div class="top-brokers-layout">
+          <h2>Business Class Analysis</h2>
+          <div class="flex-box">
+            <div>
+              <div class="select-label">Business class</div>
+              <select id="business-class" name="form_select">
+                <option value="All" selected>All</option>
+                <option value="Financial Institution">Financial Institution</option>
+                <option value="Commercial PI">Commercial PI</option>
+              </select>
+            </div>
+            <div>
+              <div class="select-label">Class type</div>
+              <select id="class-type" name="form_select">
+                <option value="All" selected>All</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="class-analysis">
+          <!-- Business class analysis data will be populated here -->
+          <div id="total-class-stats"></div>
+          <div id="class-stats-two-one"></div>
+          <div id="class-stats-double-two"></div>
+        </div>
+      </section>
+
+      <section>
+        <div id="chat-container" style="display: none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-left-circle-fill" viewBox="0 0 16 16" id="toggle-icon-down">
+            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-5.904-2.803a.5.5 0 1 1 .707.707L6.707 10h2.768a.5.5 0 0 1 0 1H5.5a.5.5 0 0 1-.5-.5V6.525a.5.5 0 0 1 1 0v2.768z"/>
+          </svg>
+          <div id="chat-display"></div>
+          <div id="message-type">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+          </div>
+        </div>
+        <div id="chat-container-closed" style="display: flex">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16" id="toggle-icon-up">
+            <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+          </svg>
+          <div style="color: #fff">Open Chat</div>
+        </div>
+      </section>
+    </main>
+   
+    <script src="brokersTable.js"></script>
+    <script src="brokersChart.js"></script>
+    <script src="businessClass.js"></script>
+    <script src="chatbot.js"></script>
+  </body>
+</html>
+  

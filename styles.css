@@ -1,0 +1,347 @@
+body {
+  font-size: 0.9em;
+  font-family: sans-serif;
+}
+#nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  background-color: #b2beb5;
+}
+
+#nav-logo {
+  color: #fff;
+}
+
+#nav a {
+  margin: 0 10px 0 20px;
+  font-size: 1em;
+  font-family: sans-serif;
+  text-decoration: none;
+  background-color: #b2beb5;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.top-brokers-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 10px 0 10px;
+}
+
+#top-brokers-select,
+#business-class,
+#class-type,
+#market-type,
+#year-wise,
+#data-index-wise {
+  border: 0;
+  outline: 0;
+  width: 10rem;
+  padding: 5px;
+  color: #000;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#top-brokers-table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#open-market-div,
+#facilities-div,
+#open-market-and-acilities-div {
+  margin: 15px 10px;
+}
+
+#open-market-table,
+#facilities-table,
+#combined-table {
+  border-collapse: collapse;
+  /* margin: 25px 5px; */
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#open-market-table tbody,
+#facilities-table tbody,
+#combined-table tbody,
+#open-market-table thead,
+#facilities-table thead,
+#combined-table thead {
+  width: 800px;
+}
+
+#open-market-table thead tr {
+  background-image: linear-gradient(#009879, #bde4dc);
+  color: #ffffff;
+  text-align: left;
+  position: relative;
+}
+
+#facilities-table thead tr {
+  background-image: linear-gradient(#e8a4ba, #f9e7ed);
+  color: #ffffff;
+  text-align: left;
+  position: relative;
+  top: auto;
+}
+
+#combined-table thead tr {
+  background-image: linear-gradient(#5b6baa, #c9cfe4);
+  color: #ffffff;
+  text-align: left;
+  position: relative;
+}
+
+#open-market-table td,
+#open-market-table th,
+#facilities-table td,
+#facilities-table th,
+#combined-table td,
+#combined-table th {
+  width: 15%;
+  text-align: center;
+  padding: 12px 15px;
+}
+
+#open-market-table td:nth-child(3) td:nth-child(4),
+#open-market-table th:nth-child(3) th:nth-child(4),
+#facilities-table td:nth-child(3) td:nth-child(4),
+#facilities-table th:nth-child(3) th:nth-child(4),
+#combined-table td:nth-child(3) td:nth-child(4),
+#combined-table th:nth-child(3) th:nth-child(4) {
+  width: 20%;
+  text-align: center;
+  padding: 4px;
+}
+
+#open-market-table tbody tr,
+#facilities-table tbody tr,
+#combined-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  height: 60px;
+}
+
+#open-market-table tbody tr:nth-of-type(even),
+#facilities-table tbody tr:nth-of-type(even),
+#combined-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+#open-market-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+#facilities-table tbody tr:last-of-type {
+  border-bottom: 2px solid #e8a4ba;
+}
+#combined-table tbody tr:last-of-type {
+  border-bottom: 2px solid #5b6baa;
+}
+#class-analysis {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#total-class-stats,
+#class-stats-two-one,
+#class-stats-double-two {
+  margin: 10px 5px;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 33%;
+  z-index: 1;
+  border-radius: 0.25em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient(to right, #512a36, #d4cacd);
+  padding: 15px;
+}
+
+.year {
+  font-size: 1.5em;
+  font-family: sans-serif;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.planned-premium,
+.earned-premium,
+.gwp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.planned-premium-text,
+.earned-premium-text,
+.gwp-text {
+  color: #a7a7a9;
+}
+
+.planned-premium-value,
+.earned-premium-value,
+.gwp-value {
+  color: #3c1f28;
+}
+
+#chart-container {
+  overflow-x: auto;
+}
+
+.bar1 {
+  fill: steelblue;
+  opacity: 0.5;
+}
+
+.bar2 {
+  fill: gray;
+  opacity: 0.5;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.lagend-text {
+  font-size: 0.8em;
+  font-family: sans-serif;
+}
+
+#square {
+  background-color: steelblue;
+}
+
+#planned-square {
+  background-color: gray;
+}
+
+.square {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.flex-box {
+  display: flex;
+  align-items: center;
+}
+
+.select-label {
+  font-size: 0.8em;
+  font-family: sans-serif;
+  margin: 0 0 5px 10px;
+}
+
+#chat-container {
+  width: 350px;
+  height: 300px;
+  border: 1px solid #ccc;
+  overflow-y: scroll;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px;
+  background-color: #eeeeee;
+  border-radius: 20px;
+}
+
+#chat-container-closed {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #3399ff;
+  border-radius: 4px;
+}
+
+#chat-display {
+  padding: 10px;
+}
+
+#user-input {
+  width: calc(100% - 80px);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#message-type {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  bottom: 5px;
+}
+
+#send-btn {
+  width: 60px;
+  padding: 5px;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #fff;
+  background-color: #3399ff;
+  cursor: pointer;
+  border: 2px solid #cce5fe;
+}
+
+.user {
+  text-align: right;
+  color: blue;
+}
+
+.bot {
+  text-align: left;
+  color: green;
+}
+
+#toggle-icon-down {
+  font: 1em;
+  height: 20px;
+  width: 20px;
+  margin-left: auto;
+  margin-top: 2px;
+  margin-right: 2px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+#toggle-icon-up {
+  font: 1em;
+  height: 20px;
+  width: 20px;
+  margin-left: 2px;
+  cursor: pointer;
+  margin-right: 15px;
+  fill: #fff;
+}
